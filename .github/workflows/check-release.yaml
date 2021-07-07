@@ -3,11 +3,9 @@
 on:
   push:
     branches:
-      - main
       - master
   pull_request:
     branches:
-      - main
       - master
 
 name: R-CMD-check
@@ -22,11 +20,12 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck"))
+          install.packages(c("remotes", "rmarkdown")
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
         run: |
-          options(crayon.enabled = TRUE)
-          rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+          for(i in grep("\\.Rmd", system("git diff-tree  --name-only -r @{1} master", intern = TRUE), value = TRUE)) {
+          rmarkdown::render(i, output_file = "chapter.html")
+          }
         shell: Rscript {0}
