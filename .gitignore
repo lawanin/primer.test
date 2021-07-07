@@ -48,3 +48,6 @@ IPUMS/extracts/*/*dat
 
 
 
+.Rdata
+.httr-oauth
+.DS_Store
