@@ -20,12 +20,12 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rmarkdown"))
+          install.packages(c("remotes", "knitr"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
         run: |
-          for(i in grep("\\.Rmd", system("git diff-tree  --name-only -r @{1} master", intern = TRUE), value = TRUE)) {
-          rmarkdown::render(i, output_file = "chapter.html")
+          for(i in grep("\\.Rmd", system("git diff --name-only origin/master HEAD", intern = TRUE), value = TRUE)) {
+          knitr::knit2html(i)
           }
         shell: Rscript {0}
