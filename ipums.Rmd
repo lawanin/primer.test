@@ -1,6 +1,6 @@
 # IPUMS {-}
 
-IPUMS, the Integrated Public Use Microdata Series, is a great source for big data. IPUMS includes the Current Population Survey (CPS) from the U.S. Census as well as other health and housing data. The IPUMS system allows you to create a subset of these massive repositories of collected data that fits your needs and interests. An initial word of caution to those new to the system is that your requests are not filled immediately, so **start early!**
+, the Integrated Public Use Microdata Series, is a great source for big data. IPUMS includes the Current Population Survey (CPS) from the U.S. Census as well as other health and housing data. The IPUMS system allows you to create a subset of these massive repositories of collected data that fits your needs and interests. An initial word of caution to those new to the system is that your requests are not filled immediately, so **start early!**
 
 
 ## Getting Started {-}
@@ -27,7 +27,7 @@ From here you will see a prompt to login or register at the very top of the wido
 knitr::include_graphics("IPUMS/images/login_pt1_02.png")
 ```
 
-If you have used IPUMS before, then you may proceed to login and move on to select your data. However, if you are a new user, you will need to apply for access. The register tab will ask you for standard account creation information. (You should use your Harvard college email and indicate your usage accordingly.) There are a handful of data use agreements you will be required to agree to in this process which you should note specifically with regard to citations. 
+If you have used IPUMS before, then you may proceed to login and move on to select your data. However, if you are a new user, you will need to apply for access. The register tab will ask you for standard account creation information. (You should use your Harvard college email and indicate your usage accordingly.) There are a handful of data use agreements you will be required to agree to in this process which you should note specifically with regard to citations. Once you have applied, you will need to await the confirmation of your account to log in fully.
 
 Once you have received the email confirmation and logged in properly, you will be able to begin the data selection process. The first option you will need to consider and specify will be the samples (see 'select samples' button), or time the period covered by your data. You will want to pay close attention to the intervals in this step as well as to note whether your pull will be a large sample or the entire available set (relevant in census applications). From there you can use the drop down menus and/or the search feature to locate and include the variables that you need or that may be relevant to your query.
 
