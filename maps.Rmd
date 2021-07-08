@@ -1,9 +1,6 @@
 # Maps {-}
 
-
-<!-- Add something about street maps? http://joshuamccrain.com/tutorials/maps/streets_tutorial.html Or Map Box, which looks very cool. -->
-
-<!-- Should we have the code run live or just save the data and pretend to run it live? Not sure! I am actually having trouble getting it to compile live. It seems like, when knitting, it does not have access to my API key. Why would that be? Running live takes a bunch of time. But the data is awfully large to store, much too large to put in Github, thereby preventing automated builds/testing. -->
+<!-- Should we have the code run live or just save the data and pretend to run it live? Not sure! I am actually having trou compile live. It seems like, when knitting, it does not have access to my API key. Why would that be? Running live takes a bunch of time. But the data is awfully large to store, much too large to put in Github, thereby preventing automated builds/testing. -->
 
 <!-- Plan: No live downloads. Store data needed, perhaps even only the summary data. -->
 
@@ -28,7 +25,7 @@ Note that to use **tidycensus**, you'll need a Census API key.  You can request 
 census_api_key("API KEY")  # You must replace API KEY with your actual key.
 ```
 
-If you run the `census_api_key()` function with the option `install = TRUE`, it will save your API key in your `.Renviron` so you don't have to run `census_api_key()` every time you want to get data from the Census. However, you should only do this once. You can examine/edit your `. `usethis::edit_r_environ()`.
+If you run the `census_api_key()` function with the option `install = TRUE`, it will save your API key in your `.Renviron` so you don't have to run `census_api_key()` every time you want to get data from the Census. However, you should only do this once. You can examine/edit your `.Renviron` file directly with `usethis::edit_r_environ()`.
 
 There are two main sources we will be getting data from: the **American Community Survey (ACS)** and the **Decennial Census**. Both sources are available at  [data.census.gov](https://data.census.gov).
 
