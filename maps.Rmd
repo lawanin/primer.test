@@ -28,7 +28,7 @@ Note that to use **tidycensus**, you'll need a Census API key.  You can request 
 census_api_key("API KEY")  # You must replace API KEY with your actual key.
 ```
 
-If you run the `census_api_key()` function with the option `install = TRUE`, it will save your API key in your `.Renviron` so you don't have to run `census_api_key()` every time you want to get data from the Census. However, you should only do this once. You can examine/edit your `.Renviron` file directly with `usethis::edit_r_environ()`.
+If you run the `census_api_key()` function with the option `install = TRUE`, it will save your API key in your `.Renviron` so you don't have to run `census_api_key()` every time you want to get data from the Census. However, you should only do this once. You can examine/edit your `. `usethis::edit_r_environ()`.
 
 There are two main sources we will be getting data from: the **American Community Survey (ACS)** and the **Decennial Census**. Both sources are available at  [data.census.gov](https://data.census.gov).
 
