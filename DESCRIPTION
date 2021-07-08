@@ -54,5 +54,7 @@ Imports:
     tidycensus,
     tidyverse,
     usethis 
+Remotes:  
+    PPBDS/primer.data
  
 
