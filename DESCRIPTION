@@ -43,7 +43,6 @@ Imports:
     rayshader,
     readxl,
     remotes,
-    renv,
     reprex,
     reticulate,
     rgl,
