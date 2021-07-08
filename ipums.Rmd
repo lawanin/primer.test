@@ -1,6 +1,6 @@
 # IPUMS {-}
 
-, the Integrated Public Use Microdata Series, is a great source for big data. IPUMS includes the Current Population Survey (CPS) from the U.S. Census as well as other health and housing data. The IPUMS system allows you to create a subset of these massive repositories of collected data that fits your needs and interests. An initial word of caution to those new to the system is that your requests are not filled immediately, so **start early!**
+,Public Use Microdata Series, is a great source for big data. IPUMS includes the Current Population Survey (CPS) from the U.S. Census as well as other health and housing data. The IPUMS system allows you to create a subset of these massive repositories of collected data that fits your needs and interests. An initial word of caution to those new to the system is that your requests are not filled immediately, so **start early!**
 
 
 ## Getting Started {-}
