@@ -1,12 +1,12 @@
-Package: primer.test
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Package: primer
+Title: Preceptor's Primer for Bayesian Data Science
+Version: 1.0
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "David",
+           family = "Kane",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "dave.kane@gmail.com",
+           comment = c(ORCID = "0000-0002-6660-3934"))
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
@@ -14,6 +14,7 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.0
+VignetteBuilder: knitr
 Imports: 
     DBI,
     RSQLite,
@@ -43,7 +44,6 @@ Imports:
     rayshader,
     readxl,
     remotes,
-    renv,
     reprex,
     reticulate,
     rgl,
@@ -54,5 +54,6 @@ Imports:
     tidycensus,
     tidyverse,
     usethis 
- 
-
+Remotes:  
+    PPBDS/primer.data
+BugReports: https://github.com/ppbds/primer/issues
