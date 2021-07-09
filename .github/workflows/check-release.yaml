@@ -22,10 +22,10 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install dependencies
         run: |
-          install.packages("remotes")
-          remotes::install_github("PPBDS/primer.data")
-          system("git diff --name-only origin/master HEAD > changes")
-          install.packages(system('while read line; do grep "library" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" | sed -E "s/[^ ]* [^ ]*//g" | sed "s/primer.data//g" | awk "NF" | sort -u', intern = TRUE))
+          install.packages("renv")
+          renv::restore(
+          packages = (system('while read line; do grep "library" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" | sed -E "s/[^ ]* [^ ]*//g" | sed "s/primer.data//g" | awk "NF" | sort -u', intern = TRUE))
+          )
         shell: Rscript {0}
       - name: Check
         run: |
