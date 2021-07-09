@@ -24,7 +24,7 @@ jobs:
         run: |
           install.packages("renv")
           renv::restore(
-          packages = system('while read line; do grep "library" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" | sed -E "s/[^ ]* [^ ]*//g" | sed "s/primer.data//g" | awk "NF" | sort -u', intern = TRUE)
+          packages = system('while read line; do grep "library" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" | sed -E "s/[^ ]* [^ ]*//g" | awk "NF" | sort -u', intern = TRUE)
           )
         shell: Rscript {0}
       - name: Check
