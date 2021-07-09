@@ -27,6 +27,7 @@ jobs:
         shell: Rscript {0}
       - name: Check
         run: |
+          system("git diff --name-only origin/master HEAD | grep Rmd > changes")
           for(i in system("cat changes", intern = TRUE)) {
           knitr::knit2html(i)
           }
