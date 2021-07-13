@@ -21,6 +21,7 @@ jobs:
           fetch-depth: 0
       - uses: r-lib/actions/setup-r@v1
       - name: Install dependencies
+      #work
         run: |
           install.packages("renv")
           system("git diff --name-only origin/master HEAD | grep Rmd > changes")
