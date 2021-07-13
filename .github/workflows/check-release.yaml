@@ -22,6 +22,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install dependencies
       #work
+      # a
         run: |
           install.packages("renv")
           system("git diff --name-only origin/master HEAD | grep Rmd > changes")
