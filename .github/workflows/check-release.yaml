@@ -30,11 +30,11 @@ jobs:
         run: |
           install.packages("renv")
           renv::consent(provided = TRUE)
-          a <- system("git log -1 --name-only origin/master HEAD | grep Rmd > changes")
+          a <- system("git log -1 --name-only | grep Rmd > changes")
           system('while read line; do grep "library(" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" > 1')
           system('while read line; do grep -E ".*\\:\\:" "$line"; done < changes | sed -E "s/\\:\\:.*//g" | sed -E "s/.*[^A-Za-z1-9]//g" > 2')
-          renv::restore(packages = system('cat 1 2 | awk "NF" | sort -u', intern = TRUE))
           print(a)
+          renv::restore(packages = system('cat 1 2 | awk "NF" | sort -u', intern = TRUE))
         shell: Rscript {0}
       - name: Check
         run: |
