@@ -2,6 +2,8 @@
 
 <!-- Add more material about Happy Git with R and how to use it. Add more material from R basics. They need to know how to create and knit an Rmd file. -->
 
+<!-- Lessgoo -->
+
 <!-- How should we end this chapter? Perhaps with some cool example graphics. Take this course to build these things? Perhaps even a curl() grab of an Rmd which they then knit into something cool. Maybe the plot from chapter 1? -->
 
 <!-- Update some of the graphics, especially since the tutorials now live in a different package. Need new gif for the tutorial save process. Or maybe the process is so simple now that we don't need a gif at all.  -->
