@@ -20,12 +20,22 @@ jobs:
         with:
           fetch-depth: 0
       - uses: r-lib/actions/setup-r@v1
+      - uses: actions/cache@v1
+        with:
+          path: ~/Library/Application Support/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+             ${{ runner.os }}-renv-
       - name: Install dependencies
         run: |
           install.packages("renv")
-          system("git diff --name-only origin/master HEAD | grep Rmd > changes")
+          renv::consent(provided = TRUE)
+          system("git log -1 --name-only | grep Rmd > changes")
+          a <- system("cat changes", intern = TRUE)
+          print(a)
           system('while read line; do grep "library(" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" > 1')
           system('while read line; do grep -E ".*\\:\\:" "$line"; done < changes | sed -E "s/\\:\\:.*//g" | sed -E "s/.*[^A-Za-z1-9]//g" > 2')
+          print(a)
           renv::restore(packages = system('cat 1 2 | awk "NF" | sort -u', intern = TRUE))
         shell: Rscript {0}
       - name: Check
