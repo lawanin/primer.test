@@ -23,6 +23,7 @@ jobs:
       - name: Install dependencies
       #work
       # a
+      # b
         run: |
           install.packages("renv")
           system("git diff --name-only origin/master HEAD | grep Rmd > changes")
