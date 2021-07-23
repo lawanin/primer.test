@@ -1,9 +1,6 @@
 # For help debugging build failures open an issue on the RStudio community with the 'github-actions' tag.
 # https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -20,6 +17,12 @@ jobs:
         with:
           fetch-depth: 0
       - uses: r-lib/actions/setup-r@v1
+      - uses: actions/cache@v1
+        with:
+          path: ~/Library/Application Support/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+             ${{ runner.os }}-renv-
       - name: Install dependencies
         run: |
           install.packages("renv")
