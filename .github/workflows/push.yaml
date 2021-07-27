@@ -1,5 +1,14 @@
 # For help debugging build failures open an issue on the RStudio community with the 'github-actions' tag.
 # https://community.rstudio.com/new-topic?category=Package%20development&tags=github-actions
+
+# The other workflow does not work on pushes to the master branch because the git
+# diff comparison with the master is identical to the branch on which the workflow
+# is running. In this workflow we  grep git log Merge pull requests and then
+# compare the current branch to the last two merges. For merged pull requests, this
+# finds Rmds that are not the same as those in most recent merge. For pushes which
+# Preceptor makes from the local master to origin, this compare, this finds Rmds that
+# are not the same as in the last two merges.
+
 on:
   push:
     branches:
