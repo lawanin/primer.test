@@ -7,7 +7,8 @@
 # compare the current branch to the last two merges. For merged pull requests, this
 # finds Rmds that are not the same as those in most recent merge. For pushes which
 # Preceptor makes from the local master to origin, this compare, this finds Rmds that
-# are not the same as in the last two merges.
+# are not the same as in the last two merges. To avoid testing the same Rmd twice,
+# sort -u is used.
 
 on:
   push:
@@ -29,21 +30,19 @@ jobs:
       - uses: actions/cache@v1
         with:
           path: ~/Library/Application Support/renv
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          key: ${{ runner.os }}-renv-v2-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
-             ${{ runner.os }}-renv-
+             ${{ runner.os }}-renv-v2
       - name: Install dependencies
         run: |
           install.packages("renv")
-          system('git log --grep="Merge pull request #[0-9]\\+" --pretty=oneline -2 | sed "s/ .*//g" > last_merge')
-          system('while read line; do git diff --name-only "$line" HEAD; done < last_merge | grep Rmd > changes')
-          system('while read line; do grep "library(" "$line"; done < changes | sed -E  "s/.*library\\(|\\).*//g" > 1')
-          system('while read line; do grep -E ".*\\:\\:" "$line"; done < changes | sed -E "s/\\:\\:.*//g" | sed -E "s/.*[^A-Za-z1-9]//g" > 2')
-          renv::restore(packages = system('cat 1 2 | awk "NF" | sort -u', intern = TRUE))
+          renv::consent(provided = TRUE)
+          renv::restore()
         shell: Rscript {0}
       - name: Check
         run: |
-          for(i in system("cat changes", intern = TRUE)) {
+          system('git log --grep="Merge pull request #[0-9]\\+" --pretty=oneline -2 | sed "s/ .*//g" > last_merge')
+          for(i in system('while read line; do git diff --name-only "$line" HEAD; done < last_merge | grep Rmd | sort -u', intern = TRUE)) {
           knitr::knit2html(i)
           }
         shell: Rscript {0}
