@@ -1,6 +1,6 @@
 # Probability {#probability}
 
-<!-- This is a change.  -->
+<!-- This is a change. Another change -->
 
 <!-- Put the empirical distribution first for our 4 probability distributions. Then, mathematical. Give the simple notation a single observation. Start the mathematical with the distribution of a single observation is described by this formula. y_i ~ Bernoulli(p). Expected value of y_i is this mathematical probability distribution. If your assumptions are correct, then as your sample size increases, the empirical probability distribution will look more and more like the mathematical distribution.  -->
 
