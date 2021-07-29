@@ -43,6 +43,7 @@ jobs:
         run: |
           system('git log --grep="Merge pull request #[0-9]\\+" --pretty=oneline -2 | sed "s/ .*//g" > last_merge')
           for(i in system('while read line; do git diff --name-only "$line" HEAD; done < last_merge | grep Rmd | sort -u', intern = TRUE)) {
+          paste("Checking", i)
           knitr::knit2html(i)
           }
         shell: Rscript {0}
