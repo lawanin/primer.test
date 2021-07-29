@@ -530,8 +530,8 @@ You should always use the simplest possible data type that works for your needs.
 To get the current date or date-time you can use `today()` or `now()`:
 
 ```{r}
-today()
-now()
+# today()
+# now()
 ```
 
 Otherwise, there are three ways you're likely to create a date/time:
