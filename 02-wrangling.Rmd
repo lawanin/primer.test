@@ -635,16 +635,16 @@ wday(datetime, label = TRUE, abbr = FALSE)
 You can create a new date-time with `update()`.
 
 ```{r}
-update(datetime, year = 2020, month = 2, mday = 2, hour = 2)
+# update(datetime, year = 2020, month = 2, mday = 2, hour = 2)
 ```
 
 If values are too big, they will roll-over:
 
 ```{r}
-ymd("2015-02-01") %>% 
-  update(mday = 30)
-ymd("2015-02-01") %>% 
-  update(hour = 400)
+# ymd("2015-02-01") %>% 
+#   update(mday = 30)
+# ymd("2015-02-01") %>% 
+#   update(hour = 400)
 ```
 
 
