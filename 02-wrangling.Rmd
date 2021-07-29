@@ -531,7 +531,7 @@ To get the current date or date-time you can use `today()` or `now()`:
 
 ```{r}
 lubridate::today()
-lubrdiate::now()
+lubridate::now()
 ```
 
 Otherwise, there are three ways you're likely to create a date/time:
