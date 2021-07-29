@@ -655,9 +655,9 @@ Time zones are an enormously complicated topic because of their interaction with
 In R, the time zone is an attribute of the date-time that only controls printing. For example, these three objects represent the same instant in time:
 
 ```{r}
-(x1 <- ymd_hms("2015-06-01 12:00:00", tz = "America/New_York"))
-(x2 <- ymd_hms("2015-06-01 18:00:00", tz = "Europe/Copenhagen"))
-(x3 <- ymd_hms("2015-06-02 04:00:00", tz = "Pacific/Auckland"))
+# (x1 <- ymd_hms("2015-06-01 12:00:00", tz = "America/New_York"))
+# (x2 <- ymd_hms("2015-06-01 18:00:00", tz = "Europe/Copenhagen"))
+# (x3 <- ymd_hms("2015-06-02 04:00:00", tz = "Pacific/Auckland"))
 ```
 
 ## Combining Data
